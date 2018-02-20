@@ -1,0 +1,29 @@
+<footer>
+</footer>
+
+<div id="page-loader">
+</div>
+
+<script>
+  var pageLoader = document.querySelector("#page-loader");
+  document.addEventListener("DOMContentLoaded", function (event) {
+    fadeOut(pageLoader);
+  });
+
+  function fadeOut(el) {
+    el.style.opacity = 1;
+
+    (function fade() {
+      if ((el.style.opacity -= .1) < 0) {
+        el.style.display = "none";
+      } else {
+        requestAnimationFrame(fade);
+      }
+    })();
+  }
+
+</script>
+
+</body>
+
+</html>
